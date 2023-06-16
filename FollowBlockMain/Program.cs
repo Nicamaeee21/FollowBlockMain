@@ -8,7 +8,7 @@ namespace FollowBlockMain
 
 
         static int i;
-        static void Main(string[] args)
+        static void Main(string[] args, object prol)
         {
             Fmenu fmenu = new Fmenu();
             ProfileLists plist = new ProfileLists();
@@ -170,7 +170,41 @@ namespace FollowBlockMain
                                 break;
                   case "2":
                         Console.WriteLine("~~~SIGN UP~~~");
+                        Console.Write("Enter your email: ");
+                        string newEmail = Console.ReadLine();
+                        Console.Write("Enter your password: ");
+                        string newPassword = Console.ReadLine();
 
+                        // Check if the email already exists
+                        if (!elist.EmailExists(newEmail))
+                        {
+                            // Create a new profile
+                            Profiles newProfile = new Profiles
+                            {
+                                proname = "New User",
+                                prosname = "New",
+                                following = 0,
+                                followers = 0,
+                                blocked = 0
+                            };
+
+                            // Create a new profile list
+                            ProfileLists newProfileList = new ProfileLists
+                            {
+                                email = newEmail,
+                                pas = newPassword
+                            };
+
+                            // Add the new profile and email to the respective lists
+                            prol.Add(newProfile);
+                            elist.AddEmail(newProfileList);
+
+                            Console.WriteLine("Sign-up successful!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Email already exists. Please try again.");
+                        }
                         break;
                 }
 

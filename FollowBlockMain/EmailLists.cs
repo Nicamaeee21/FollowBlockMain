@@ -52,5 +52,10 @@ namespace FollowBlockMain
             DBList.Add(bock);
             CBList.Add(bock);
         }
+
+        internal bool EmailExists(string? newEmail)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
