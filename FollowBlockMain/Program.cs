@@ -169,7 +169,7 @@ namespace FollowBlockMain
                 }
                                 break;
                   case "2":
-                        Console.WriteLine("~~~SIGN UP~~~");
+                        Console.WriteLine("===SIGN UP===");
                         Console.Write("Enter your email: ");
                         string newEmail = Console.ReadLine();
                         Console.Write("Enter your password: ");
