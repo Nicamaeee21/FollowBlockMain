@@ -33,6 +33,7 @@ namespace Display
             Console.WriteLine("1 = Open Following");
             Console.WriteLine("2 = Open Block");
             Console.WriteLine("3 = Search");
+            Console.WriteLine("x = exit");
             Console.WriteLine("Enter Here: ");
             string chc = Console.ReadLine();
 

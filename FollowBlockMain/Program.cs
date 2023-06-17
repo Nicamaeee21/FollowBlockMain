@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace FollowBlockMain
 {
@@ -62,6 +63,17 @@ namespace FollowBlockMain
                 blocked = 1
             };
 
+            // Create a new profile
+            Profiles newProfile = new Profiles
+            {
+                following = 0,
+                followers = 0,
+                blocked = 0
+            };
+
+            // Create a new profile list
+            ProfileLists newProfileList = new ProfileLists();
+
             Follow SeanF = new Follow
             {
                 
@@ -71,11 +83,13 @@ namespace FollowBlockMain
             elist.AddEmail(Lorrea);
             elist.AddEmail(Danica);
             elist.AddEmail(Claris);
+            elist.AddEmail(newProfileList);
 
             elist.AddProfl(SeanP);
             elist.AddProfl(LorreaP);
             elist.AddProfl(DanicaP);
             elist.AddProfl(ClarisP);
+            elist.AddProfl(newProfile);
 
 
 
@@ -170,44 +184,102 @@ namespace FollowBlockMain
                                 } while (chr != "x");
                             }                  
                 }
-                                break;
+                        else if (emil.Equals(newProfileList.email))
+                        {
+                            pass = login.Password();
+
+                            if (pass.Equals(newProfileList.pas))
+                            {
+                                do
+                                {
+
+                                    fmenu.ShowProfile(newProfile);
+                                    chr = fmenu.Screen();
+
+                                    switch (chr)
+                                    {
+
+                                        case "1":
+
+                                            /*     for (i = 0; i < SFList.Count; i++)
+                                                 {
+                                                     Console.WriteLine(SFList[i]);
+
+                                                 }*/
+
+                                            break;
+
+                                        case "2":
+                                            /*
+                                            for (i = 0; i < SBList.Count; i++)
+                                            {
+                                                Console.WriteLine(SBList[i]);
+
+                                            }
+                                            */
+                                            break;
+
+                                        case "3":
+
+                                            Console.WriteLine("Search: ");
+                                            var search = Console.ReadLine();
+                                            //     var tosearch = prol.Find(x => x.proname == search);
+                                            //     tosearch = prol.Find(x => x.prosname == search);
+
+                                            Console.WriteLine("Do you wish to follow/block? type F / B");
+                                            string fb = Console.ReadLine().ToLower();
+
+
+
+                                            /*        switch (fb)
+                                                    {
+                                                        case "f":
+
+                                                            if (!SFList.Contains(tosearch.proname)) { SFList.Add($"{tosearch.proname} {tosearch.prosname}");
+                                                                sum = tosearch.following + 1;
+                                                                SeanP.following = sum; }
+
+                                                            else { Console.WriteLine("Already Following"); } break;
+
+
+                                                        case "b":
+                                                            if (!SBList.Contains(tosearch.proname))
+                                                            {
+                                                                SBList.Add($"{tosearch.proname} {tosearch.prosname}");
+                                                                sum = tosearch.blocked + 1;
+                                                                SeanP.blocked = sum;
+                                                            }
+
+                                                            else { Console.WriteLine("Already Following"); } break;
+
+
+                                                    }*/
+                                            break;
+                                    }
+                                } while (chr != "x");
+                            }
+                        }
+
+                        break;
                   case "2":
                         Console.WriteLine("===SIGN UP===");
-                        Console.Write("Enter your email: ");
-                        string newEmail = Console.ReadLine();
-
-                        // Check if the email already exists
-                     //   if (!elist.EmailExists(newEmail))
-                      //  {
-
-                            Console.Write("Enter your password: ");
-                        string newPassword = Console.ReadLine();
-
-                            Console.WriteLine("Enter first name: ");
+                        Console.WriteLine("Enter first name: ");
                             string fname = Console.ReadLine();
                             Console.WriteLine("Enter last name: ");
                             string lname = Console.ReadLine();
+                        Console.Write("Enter your password: ");
+                        string newPassword = Console.ReadLine();
+                        newProfileList.pas = newPassword;
 
+                        newProfile.proname = fname;
+                        newProfile.prosname = lname;
+                        newProfileList.email = fname + "@Follow";
 
-                            // Create a new profile
-                            Profiles newProfile = new Profiles
-                            {
-                                proname = fname,
-                                prosname = lname,
-                                following = 0,
-                                followers = 0,
-                                blocked = 0
-                            };
+                        Console.WriteLine(newProfileList.email);
+                        Console.WriteLine(newProfileList.pas);
 
-                            // Create a new profile list
-                            ProfileLists newProfileList = new ProfileLists
-                            {
-                                email = newEmail,
-                                pas = newPassword
-                            };
-
-                            // Add the new profile and email to the respective lists
-                            elist.AddProfl(newProfile);
+                        // Add the new profile and email to the respective lists
+                        elist.AddProfl(newProfile);
                             elist.AddEmail(newProfileList);
 
                             Console.WriteLine("Sign-up successful!");

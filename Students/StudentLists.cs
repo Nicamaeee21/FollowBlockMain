@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DummyProfiles
+﻿namespace Students
 {
-    public class EmailLists
+    public class StudentLists
     {
         public List<ProfileLists> FolNam = new List<ProfileLists>();
         public List<Profiles> Prol = new List<Profiles>();
 
 
-        void Emlist() {
-            
+        void Emlist()
+        {
+
             ProfileLists Sean = new ProfileLists();
             Sean.email = "Sean@Follow";
             Sean.pas = "sean123";
@@ -36,11 +31,12 @@ namespace DummyProfiles
 
             ProfileLists New = new ProfileLists();
 
-     
-            
+
+
         }
 
-        string Profl(string het) {
+        string Profl(string het)
+        {
             Profiles SeanP = new Profiles();
             SeanP.proname = "Sean";
             SeanP.prosname = "Estayan";
@@ -74,7 +70,7 @@ namespace DummyProfiles
             Prol.Add(ClarisP);
 
             return het;
-        
+
         }
         /*
                 public void Profil() {
