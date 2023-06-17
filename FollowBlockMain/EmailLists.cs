@@ -32,7 +32,7 @@ namespace FollowBlockMain
             FolNam.Add(fileli);
         }
 
-        void AddProfl(Profiles selif)
+        public void AddProfl(Profiles selif)
         {
             Prol.Add(selif);
         }
@@ -53,9 +53,11 @@ namespace FollowBlockMain
             CBList.Add(bock);
         }
 
-        internal bool EmailExists(string? newEmail)
+      /*  internal bool EmailExists(string newEmail)
         {
-            throw new NotImplementedException();
-        }
+            //throw new NotImplementedException();
+            if (!FolNam.Exists(newEmail)) { return true; }
+            else { return false; }
+        }*/
     }
 }

@@ -3,18 +3,14 @@ using System.Linq;
 
 namespace FollowBlockMain
 {
-    class Program
+    public class Program
     {
-
-
-        static int i;
-        static void Main(string[] args, object prol)
+       // static int i;
+        static void Main (string[] args)
         {
             Fmenu fmenu = new Fmenu();
-            ProfileLists plist = new ProfileLists();
             LogIn login = new LogIn();
             EmailLists elist = new EmailLists();
-            //Profiles seliforp = new Profiles(); 
 
             ProfileLists Sean = new ProfileLists
             {
@@ -76,6 +72,13 @@ namespace FollowBlockMain
             elist.AddEmail(Danica);
             elist.AddEmail(Claris);
 
+            elist.AddProfl(SeanP);
+            elist.AddProfl(LorreaP);
+            elist.AddProfl(DanicaP);
+            elist.AddProfl(ClarisP);
+
+
+
 
 
             do
@@ -109,22 +112,22 @@ namespace FollowBlockMain
 
                                         case "1":
 
-                                            for (i = 0; i < SFList.Count; i++)
+                                       /*     for (i = 0; i < SFList.Count; i++)
                                             {
                                                 Console.WriteLine(SFList[i]);
 
-                                            }
+                                            }*/
 
                                             break;
 
                                         case "2":
-
+                                            /*
                                             for (i = 0; i < SBList.Count; i++)
                                             {
                                                 Console.WriteLine(SBList[i]);
 
                                             }
-
+                                            */
                                             break;
 
                                         case "3":
@@ -172,17 +175,25 @@ namespace FollowBlockMain
                         Console.WriteLine("===SIGN UP===");
                         Console.Write("Enter your email: ");
                         string newEmail = Console.ReadLine();
-                        Console.Write("Enter your password: ");
-                        string newPassword = Console.ReadLine();
 
                         // Check if the email already exists
-                        if (!elist.EmailExists(newEmail))
-                        {
+                     //   if (!elist.EmailExists(newEmail))
+                      //  {
+
+                            Console.Write("Enter your password: ");
+                        string newPassword = Console.ReadLine();
+
+                            Console.WriteLine("Enter first name: ");
+                            string fname = Console.ReadLine();
+                            Console.WriteLine("Enter last name: ");
+                            string lname = Console.ReadLine();
+
+
                             // Create a new profile
                             Profiles newProfile = new Profiles
                             {
-                                proname = "New User",
-                                prosname = "New",
+                                proname = fname,
+                                prosname = lname,
                                 following = 0,
                                 followers = 0,
                                 blocked = 0
@@ -196,15 +207,15 @@ namespace FollowBlockMain
                             };
 
                             // Add the new profile and email to the respective lists
-                            prol.Add(newProfile);
+                            elist.AddProfl(newProfile);
                             elist.AddEmail(newProfileList);
 
                             Console.WriteLine("Sign-up successful!");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Email already exists. Please try again.");
-                        }
+                       // }
+                       // else
+                       // {
+                       //     Console.WriteLine("Email already exists. Please try again.");
+                       // }
                         break;
                 }
 
