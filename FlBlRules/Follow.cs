@@ -11,6 +11,7 @@ namespace FlBlRules
     public  class Follow
     {
         private FollowData followData;    
+
         public Follow() {
         
             followData = new FollowData();

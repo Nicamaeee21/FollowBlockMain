@@ -12,6 +12,7 @@ namespace FlBlRules
     public class Block
     {
         private BlockData blockData;
+
         public Block()
         {
 
