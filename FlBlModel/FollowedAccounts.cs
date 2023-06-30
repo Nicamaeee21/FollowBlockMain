@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlBlModel
 {
-    internal class FollowedAccounts
+    public class FollowedAccounts
     {
         public string follower { get; set; }
         public string following { get; set; }

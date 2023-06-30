@@ -10,5 +10,14 @@ namespace FlBlData
 {
     internal class FollowData
     {
+        public FollowData(string tofollow, string myAccount) {
+
+            FollowedAccounts followedAccounts = new();
+            followedAccounts.follower =  myAccount;
+            followedAccounts.following = tofollow;
+
+           
+        
+        }
     }
 }
