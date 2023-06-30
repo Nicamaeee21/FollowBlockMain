@@ -8,8 +8,8 @@ namespace FlBlRules
 {
     internal class Suggestions
     {
-        public Suggestions(string myAccount) { 
-        
+        public Suggestions(string myAccount) {
+            int studentNumber;
         }
     }
 }
