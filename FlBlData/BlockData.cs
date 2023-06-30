@@ -9,5 +9,10 @@ namespace FlBlData
 {
     internal class BlockData
     {
+        public BlockData(string toblock, string myAccount) { 
+        BlockedAccounts blockedAccounts = new();
+            blockedAccounts.blocker = myAccount;
+            blockedAccounts.blocked = toblock;
+        }
     }
 }
