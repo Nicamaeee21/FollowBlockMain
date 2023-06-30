@@ -7,13 +7,21 @@ using FlBlModel;
 
 namespace FlBlData
 {
-    internal class BlockData
+    public class BlockData
     {
-        public BlockData(string toblock, string myAccount) { 
+        public void dataBlock (string toblock, string myAccount) { 
 
-            BlockedAccounts blockedAccounts = new();
+            /*BlockedAccounts blockedAccounts = new();
             blockedAccounts.blocker = myAccount;
-            blockedAccounts.blocked = toblock;
+            blockedAccounts.blocked = toblock;*/
+
+        }
+
+        public void dataUnblock(string tounblock, string myAccount)
+        {
+
+
+
         }
     }
 }

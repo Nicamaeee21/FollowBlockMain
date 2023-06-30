@@ -8,16 +8,19 @@ using FlBlModel;
 
 namespace FlBlData
 {
-    internal class FollowData
+    public class FollowData
     {
-        public FollowData(string tofollow, string myAccount) {
+        public void dataFollow (string tofollow, string myAccount) {
 
-            FollowedAccounts followedAccounts = new();
+           /* FollowedAccounts followedAccounts = new();
             followedAccounts.follower =  myAccount;
-            followedAccounts.following = tofollow;
-
-           
+            followedAccounts.following = tofollow;*/ 
         
+        }
+
+        public void dataUnfollow (string tounfollow, string myAccount)
+        {
+
         }
     }
 }
